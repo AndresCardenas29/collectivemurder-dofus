@@ -1,0 +1,600 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "BebasNeue-Regular";
+    src: url("../../fonts/BebasNeue-Regular.ttf");
+}
+
+@font-face {
+    font-family: "LondrinaSolid-Regular";
+    src: url("../../fonts/LondrinaSolid-Regular.ttf");
+}
+
+@font-face {
+    font-family: "DragonForcE";
+    src: url("../../fonts/dragonforce/DragonForcE.ttf");
+}
+
+
+body {
+    overflow-x: hidden;
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+}
+
+body .alerta {
+    position: fixed;
+    z-index: 999;
+    width: 300px;
+    left: calc(50vw - 150px);
+    top: -100%;
+    transition: all .2s;
+}
+
+.verAlerta {
+    top: 150px !important;
+}
+
+body .loader {
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    clip-path: circle(150% at 100% 0);
+    transition: .5s ease-in-out clip-path;
+    z-index: 1000;
+}
+
+.hiddeLoader {
+    clip-path: circle(0.0% at 100% 0) !important;
+}
+
+body .loader .imagen{
+    width: 20%;
+    height: 50%;
+}
+
+body .loader .imagen .name {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-weight: 800;
+    font-size: 3em;
+    font-family: "DragonForcE";
+    line-height: 50px;
+    margin-top: 20px;
+}
+
+body .loader img {
+    width: 100%;
+    filter: drop-shadow(0 0 2rem rgb(255, 0, 0));
+    animation: animateIcon 3s linear infinite;
+    margin: 20px 0 10px;
+}
+
+
+@keyframes animateIcon {
+    100% {
+        transform: rotate(1turn);
+      }
+}
+
+.separador img {
+    width: 100%;
+    object-fit: cover;
+}
+
+header {
+    width: 100vw;
+    height: 100vh;
+}
+
+header video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+}
+
+header .logo-gremio .nombre-gremio {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 120px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(255, 255, 255);
+    font-size: 4em;
+    font-family: "LondrinaSolid-Regular";
+    text-shadow: 0 0 7px rgb(255, 47, 47);
+    line-height: 44px;
+}
+
+header .logo-gremio {
+    position: relative;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .logo-gremio .imagen {
+    width: 300px;
+    height: 300px;
+    user-select: none;
+    cursor: pointer;
+}
+
+header .logo-gremio .imagen img {
+    width: 100%;
+    height: 100%;
+    user-select: none;
+    /* filter: drop-shadow(0 0.2rem 0.25rem rgb(255, 0, 0)); */
+    animation: animateLogo 1.5s ease-out 0s alternate infinite none running;
+}
+
+@keyframes animateLogo {
+    0% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 1rem rgb(0, 255, 21));
+    }
+
+    100% {
+        transform: scale(1.4);
+        filter: drop-shadow(0 0 2rem rgb(255, 0, 0));
+    }
+}
+
+.menu {
+    display: flex;
+    width: 100vw;
+    height: 87px;
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 1);
+    position: absolute;
+    bottom: 0px;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu .titulo {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 3em;
+    font-family: "BebasNeue-Regular";
+    text-align: center;
+    line-height: 35px;
+}
+
+.menu .btn-play {
+    width: 220px;
+    height: 81px;
+    background-image: url("../../imagenes/botones/btn-play1-over.png");
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .1s;
+    transform: translateY(-10px);
+    font-size: 20px;
+    user-select: none;
+}
+
+.menu .btn-play:hover {
+    transform: scale(1.15) translateY(-10px);
+    filter: brightness(1.4);
+    ;
+}
+
+.menu .btn-play {
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
+}
+
+.menu .btn-play span {
+    display: block;
+    line-height: 20px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-family: "BebasNeue-Regular";
+    font-weight: 100;
+}
+
+.menu .btn-play span:nth-child(1) {
+    font-weight: 1000;
+}
+
+.menu .menu-izquierdo a,
+.menu .menu-derecho a {
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: normal;
+    text-transform: none;
+}
+
+.menu .menu-izquierdo a {
+    margin-right: 10px;
+    padding: 20px 10px 20px 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-image:
+        linear-gradient(to bottom,
+            rgba(182, 182, 182, 0),
+            rgb(253, 253, 253),
+            rgba(182, 182, 182, 0)) 1 100%;
+    border-left: none;
+}
+
+.menu .menu-izquierdo a:hover,
+.menu .menu-derecho a:hover {
+    background-image: url("../../imagenes/botones/menu-over.png");
+    background-position: bottom;
+    color: #FFF;
+    cursor: pointer;
+}
+
+.menu .menu-derecho a {
+    margin-left: 10px;
+    padding: 20px 10px 20px 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-image:
+        linear-gradient(to bottom,
+            rgba(182, 182, 182, 0),
+            rgb(253, 253, 253),
+            rgba(182, 182, 182, 0)) 1 100%;
+    border-right: none;
+}
+
+body .reglas {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("./../../imagenes/fondo/bg-block2-3.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body .reglas .contenido-reglas {
+    width: 90vw;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+    grid-gap: 20px;
+    justify-items: center;
+    align-items: center;
+}
+
+body .reglas .contenido-reglas > div {
+    min-width: 600px;
+    max-width:90vw;
+    overflow: hidden;
+    margin: 10px;
+    position: relative;
+}
+
+body .reglas .contenido-reglas > div img {
+    width: 100%;
+    object-fit: contain;
+}
+
+body .reglas .contenido-reglas .header {
+    color: #FFF;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: underline;
+    font-family: "LondrinaSolid-Regular";
+    text-align: center;
+    font-size: 1.5em;
+}
+
+body .reglas .contenido-reglas .lista-reglas {
+    width: 400px;
+    margin: auto;
+}
+
+body .reglas .contenido-reglas .lista-reglas img {
+    width: 1em;
+    height: 1em;
+    object-fit: contain;
+}
+
+body .reglas .contenido-reglas > div .texto {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    color: #FFF;
+    font-size: 1em;
+}
+
+body .reglas .contenido-reglas > div .separator {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+body .reglas .contenido-reglas > div .separator > img {
+    width: 50%;
+}
+
+body .formulario {
+    width: 100vw;
+    min-height: 100vh;
+    background-image: url("./../../imagenes/fondo/bg-block2-2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+    grid-gap: 20px;
+    justify-items: center;
+    align-items: center;
+}
+
+
+body .formulario .formulario-team,
+body .formulario .formulario-solo {
+    min-width: 600px;
+    max-width: 45vw;
+    height: auto;
+    background: rgba(255, 255, 255, 0.3);
+    padding: 10px;
+}
+
+body .formulario .formulario-team .contenido,
+body .formulario .formulario-solo .contenido {
+    width: 100%;
+    height: auto;
+}
+
+body .formulario .formulario-team .contenido .header,
+body .formulario .formulario-solo .contenido .header {
+    background: #97A800;
+    font-family: "BebasNeue-Regular";
+    font-size: 3em;
+    color: #FFF;
+    text-align: center;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);  
+    height: 65px;
+}
+
+body .formulario .formulario-team .contenido form,
+body .formulario .formulario-solo .contenido form {
+    padding-top: 10px;
+    width: 100%;
+    background: #F8F8F6;
+}
+
+body .formulario .formulario-team .contenido form span,
+body .formulario .formulario-solo .contenido form span {
+    width: 100%;
+    display: block;
+    text-align: center;
+    font-family: "BebasNeue-Regular";
+    font-weight: 600;
+    font-size: 1.5em;
+}
+
+body .formulario .formulario-team .contenido form input[type="button"],
+body .formulario .formulario-solo .contenido form input[type="button"] {
+
+}
+
+body .formulario .formulario-team .contenido form input[type="text"],
+body .formulario .formulario-solo .contenido form input[type="text"],
+body .formulario .formulario-team .contenido form input[type="number"],
+body .formulario .formulario-solo .contenido form input[type="number"] {
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+}
+
+body .formulario .formulario-team .contenido form input[type="text"]::placeholder,
+body .formulario .formulario-solo .contenido form input[type="text"]::placeholder,
+body .formulario .formulario-team .contenido form input[type="number"]::placeholder,
+body .formulario .formulario-solo .contenido form input[type="number"]::placeholder {
+    color: rgba(0, 0, 0, 0.651);
+    font-weight: 400;
+}
+
+footer.page-footer {
+    background: #0D0503;
+    font-family: "BebasNeue-Regular";
+}
+
+
+
+
+
+
+@media (max-width: 1355px) {
+    
+    body .loader .imagen{
+        width: 30%;
+        height: auto;
+    }
+    
+    body .loader .imagen .name {
+        font-size: 3em;
+    }
+
+
+    header .logo-gremio .imagen {
+        width: 200px;
+        height: 200px;
+    }
+
+    body .reglas .contenido-reglas {
+        width: 100vw;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-gap: 20px;
+        justify-items: center;
+        align-items: center;
+    }
+
+    body .reglas .contenido-reglas > div {
+        min-width: 450px;
+    }
+
+    
+    body .reglas .contenido-reglas > div img {
+        width: 100%;
+        object-fit: contain;
+        background: transparent;
+    }
+
+    body .reglas .contenido-reglas .header {
+        font-size: 1.5em;
+        padding-top: 25px;
+        font-weight: 200;
+    }
+    
+    body .reglas .contenido-reglas > div .texto {
+        font-size: 1em;
+    }
+
+    body .reglas .contenido-reglas .lista-reglas {
+        width: 380px;
+    }
+}
+
+@media (max-width: 414px) {
+    
+    body .loader .imagen{
+        width: 30%;
+        height: auto;
+    }
+    
+    body .loader .imagen .name {
+        font-size: 3em;
+    }
+
+
+    header .logo-gremio .imagen {
+        width: 200px;
+        height: 200px;
+    }
+
+    body .reglas .contenido-reglas {
+        width: 100vw;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-gap: 20px;
+        justify-items: center;
+        align-items: center;
+    }
+
+    body .reglas .contenido-reglas > div {
+        min-width: 350px;
+    }
+
+    
+    body .reglas .contenido-reglas > div img {
+        width: 100%;
+        object-fit: contain;
+        background: transparent;
+    }
+
+    body .reglas .contenido-reglas .header {
+        font-size: 1em;
+        padding-top: 25px;
+        font-weight: 200;
+    }
+    
+    body .reglas .contenido-reglas > div .texto {
+        font-size: .63em;
+    }
+
+    body .reglas .contenido-reglas .lista-reglas {
+        width: 210px;
+    }
+}
+
+@media (max-width: 360px) {
+
+    header .logo-gremio .imagen {
+        width: 200px;
+        height: 200px;
+    }
+
+    .menu .menu-derecho a,
+    .menu .menu-izquierdo a {
+        display: none;
+        border: 1px solid #FFF;
+    }
+
+    body .reglas .contenido-reglas {
+        width: 100vw;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-gap: 20px;
+        justify-items: center;
+        align-items: center;
+    }
+
+    body .reglas .contenido-reglas > div {
+        min-width: 350px;
+    }
+
+    
+    body .reglas .contenido-reglas > div img {
+        width: 100%;
+        object-fit: contain;
+        background: transparent;
+    }
+
+    body .reglas .contenido-reglas .header {
+        font-size: 1em;
+        padding-top: 25px;
+        font-weight: 200;
+    }
+    
+    body .reglas .contenido-reglas > div .texto {
+        font-size: .63em;
+    }
+
+    body .reglas .contenido-reglas .lista-reglas {
+        width: 210px;
+    }
+
+    body .formulario {
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100vw, 1fr));
+        grid-gap: 20px;
+        justify-items: center;
+        align-items: center;
+    }
+
+    body .formulario .formulario-team,
+    body .formulario .formulario-solo {
+        min-width: 100vw;
+        max-width: 100vw;
+        height: auto;
+        background: rgba(255, 255, 255, 0.3);
+        padding: 10px;
+    }
+}
